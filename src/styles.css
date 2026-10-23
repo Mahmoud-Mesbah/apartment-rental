@@ -1,0 +1,103 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --primary-soft: #e6f4f1;
+  --radius: 14px;
+  --shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Cairo', 'Tahoma', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+}
+.btn { font-weight: 600; border-radius: 10px; }
+.btn-primary { background: var(--primary); border-color: var(--primary); }
+.btn-primary:hover, .btn-primary:focus { background: var(--primary-dark); border-color: var(--primary-dark); }
+.btn-outline-primary { color: var(--primary); border-color: var(--primary); }
+.btn-outline-primary:hover { background: var(--primary); border-color: var(--primary); }
+.form-control, .form-select { border-radius: 10px; border-color: #d1d5db; }
+.form-control:focus, .form-select:focus { border-color: var(--primary); box-shadow: 0 0 0 0.2rem rgba(15, 118, 110, 0.15); }
+.text-primary { color: var(--primary) !important; }
+
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--border); }
+.site-nav .navbar-brand { font-weight: 700; color: var(--primary); }
+.site-nav .nav-link { color: var(--text); font-weight: 600; }
+.site-nav .nav-link:hover { color: var(--primary); }
+
+.hero { background: linear-gradient(180deg, var(--primary-soft) 0%, var(--bg) 100%); padding: 56px 0 40px; }
+.hero h1 { font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.4rem); }
+.hero p.lead { color: var(--muted); max-width: 640px; margin-inline: auto; }
+.search-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; margin-top: 28px; }
+
+.apt-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+  overflow: hidden; height: 100%; display: flex; flex-direction: column; transition: box-shadow 0.2s ease; }
+.apt-card:hover { box-shadow: var(--shadow-hover); }
+.apt-card-media { position: relative; aspect-ratio: 4 / 3; background: #e5e7eb; }
+.apt-card-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.apt-badge { position: absolute; top: 12px; inset-inline-start: 12px; font-size: 0.8rem; }
+.apt-card-body { padding: 16px; display: flex; flex-direction: column; flex: 1; }
+.apt-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+.apt-meta { color: var(--muted); font-size: 0.9rem; }
+.apt-specs { display: flex; gap: 16px; font-size: 0.9rem; margin: 10px 0; }
+.apt-price { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+.apt-price small { color: var(--muted); font-weight: 400; }
+
+.badge-available, .badge-confirmed, .badge-sent { background: #dcfce7; color: #166534; }
+.badge-unavailable, .badge-cancelled { background: #fee2e2; color: #991b1b; }
+.badge-completed { background: #e0e7ff; color: #3730a3; }
+.badge-notsent { background: #fef3c7; color: #92400e; }
+
+.gallery-main { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius); background: #e5e7eb; display: block; }
+.gallery-thumbs { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; padding-bottom: 4px; }
+.gallery-thumb { width: 84px; height: 62px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid transparent; flex: 0 0 auto; background: #e5e7eb; padding: 0; }
+.gallery-thumb.active { border-color: var(--primary); }
+.gallery-thumb-img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
+.facility-chip { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-soft); color: var(--primary-dark);
+  border-radius: 999px; padding: 4px 12px; font-size: 0.88rem; margin: 0 0 8px 8px; }
+.pre-line { white-space: pre-line; }
+.quote-box { background: var(--primary-soft); border-radius: 10px; padding: 12px 14px; font-size: 0.95rem; }
+.quote-total { font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); }
+.summary-list dt { color: var(--muted); font-weight: 600; }
+.summary-list dd { font-weight: 700; margin-bottom: 10px; }
+.sticky-panel { position: sticky; top: 84px; }
+
+.state-box { text-align: center; padding: 48px 16px; color: var(--muted); }
+.state-box i { font-size: 2.6rem; display: block; margin-bottom: 8px; }
+
+.site-footer { background: #111827; color: #d1d5db; margin-top: 56px; padding: 36px 0 20px; }
+.site-footer a { color: #e5e7eb; text-decoration: none; }
+.site-footer h2 { color: #fff; font-size: 1.1rem; }
+
+.toast-area { position: fixed; bottom: 16px; inset-inline: 16px; z-index: 2100; pointer-events: none; }
+.toast-area .alert { pointer-events: auto; max-width: 480px; margin: 0 auto 8px; box-shadow: var(--shadow-hover); }
+
+/* لوحة المالك */
+.admin-nav { background: var(--surface); border-bottom: 1px solid var(--border); }
+.admin-nav .brand { font-weight: 700; color: var(--primary); }
+.stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 16px; display: flex; align-items: center; gap: 14px; height: 100%; }
+.stat-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--primary-soft); color: var(--primary);
+  display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex: 0 0 auto; }
+.stat-value { font-size: 1.6rem; font-weight: 700; line-height: 1.1; }
+.stat-label { color: var(--muted); font-size: 0.9rem; }
+.tab-btn { border: 0; background: transparent; padding: 10px 18px; font-weight: 700; color: var(--muted); border-bottom: 3px solid transparent; }
+.tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+.table > :not(caption) > * > * { vertical-align: middle; }
+.table thead th { background: #f3f4f6; white-space: nowrap; font-size: 0.88rem; }
+.table td { font-size: 0.92rem; }
+.cell-wrap { min-width: 150px; }
+.modal-backdrop-custom { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.5); z-index: 2000; overflow-y: auto; }
+
+@media (max-width: 575.98px) {
+  .hero { padding: 36px 0 28px; }
+  .search-card { padding: 14px; }
+}
